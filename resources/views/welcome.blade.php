@@ -11,10 +11,10 @@
     <div class="min-h-screen flex items-center justify-center">
         <div class="bg-white p-10 rounded-xl shadow-lg">
             <h1 class="text-4xl font-bold text-blue-600">
-                Sistema Académico
+                Sistema Académico del Instituto  IESTPH
             </h1>
 
-
+<P>Programa de Estudio ASPETIC</P>
             <p class="mt-4 text-gray-600">
                 Proyecto desarrollado con Laravel y Tailwind CSS.
             </p>
