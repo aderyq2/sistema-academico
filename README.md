@@ -60,3 +60,16 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## iniciar laravel
 npm run dev
 php artisan serve
+# Guardar en Git los cambios
+git status
+git add .
+git commit -m "Archivos Guardados"
+git push
+# validar las tablas de Laravel
+php artisan migrate
+# Comprobar tablas
+php artisan migrate:status
+# Trabajar en modelo Estudiante
+php artisan make:model Estudiante -m
+# Tinker para insertar datos
+php artisan tinker

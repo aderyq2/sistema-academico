@@ -2,18 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// Importamos el modelo Estudiante.
+use App\Models\Estudiante;
 
+// Controlador de estudiantes.
 class EstudianteController extends Controller
 {
-   
-public function index()
+    // Mostrar todos los estudiantes.
+    public function index()
     {
-        return view('estudiantes.index');
+        // Consultar todos los registros de MySQL.
+        $estudiantes = Estudiante::all();
+
+        // Enviar los registros a la vista index.
+        return view(
+            'estudiantes.index',
+            compact('estudiantes')
+        );
     }
-     public function show($id)
+
+    // Mostrar un estudiante mediante su ID.
+    public function show($id)
     {
-   return 'estudiante seleccionado'. $id;   
-   }
-        
+        // Buscar el estudiante en MySQL.
+        // Si no existe, Laravel devuelve un error 404.
+        $estudiante = Estudiante::findOrFail($id);
+
+        // Enviar los datos a la vista show.
+        return view(
+            'estudiantes.show',
+            compact('estudiante')
+        );
+    }
 }

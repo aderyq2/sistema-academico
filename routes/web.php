@@ -1,16 +1,29 @@
 <?php
+
+// Importar los controladores.
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\EstudianteController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CursoController;
 
+// Importar el sistema de rutas de Laravel.
+use Illuminate\Support\Facades\Route;
+
+// Ruta principal del proyecto.
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Ruta para mostrar la página de inicio.
 Route::get('/inicio', [InicioController::class, 'index']);
 
-Route::get('/estudiantes', [EstudianteController::class, 'index']);
+// Ruta para mostrar la lista de estudiantes.
+Route::get('/estudiantes', [EstudianteController::class, 'index'])
+    ->name('estudiantes.index');
 
-Route::get('/estudiantes/{id}', [EstudianteController::class, 'show']);
+// Ruta para mostrar los datos de un estudiante seleccionado.
+Route::get('/estudiantes/{id}', [EstudianteController::class, 'show'])
+    ->name('estudiantes.show');
 
-Route::get('/cursos', [CursoController::class, 'index'])->name('cursos.index');
+// Ruta para mostrar la lista de cursos.
+Route::get('/cursos', [CursoController::class, 'index'])
+    ->name('cursos.index');
